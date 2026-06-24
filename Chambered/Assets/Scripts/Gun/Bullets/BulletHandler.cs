@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class BulletHandler : MonoBehaviour
 {
+    [Header("Bullet Type Enum Instance")]
+    public BulletType bulletType;
+    
     [Header ("Physics Components")]
     public Rigidbody2D bulletRigidbody;
 

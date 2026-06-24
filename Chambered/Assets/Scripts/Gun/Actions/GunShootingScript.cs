@@ -20,6 +20,9 @@ public class GunShootingScript : MonoBehaviour
     public InputAction shootControls;
     public InputAction reloadControls;
 
+    [Header("Bullet Type Enum Instance")]
+    public BulletType bulletType;
+
     void OnEnable()
     {
         reloadControls.Enable();
@@ -47,16 +50,7 @@ public class GunShootingScript : MonoBehaviour
 
         if(shootControls.triggered)
         {
-            BulletHandler shotBullet = bulletsInCylinder[chamberCount];
-
-            shotBullet.gameObject.transform.position = firePoint.transform.position;
-            shotBullet.isInCylinder = false;
-            shotBullet.gameObject.SetActive(true);
-
-            shotBullet.MoveBullet(1, gunStateScript.gunRotationScript.targetDirection);
-
-            bulletsInCylinder.RemoveAt(chamberCount);
-            chamberCount -= 1;
+            ShootBullet();
         }
 
         if(reloadControls.triggered)
@@ -66,13 +60,13 @@ public class GunShootingScript : MonoBehaviour
         
     }
 
-    BulletPoolingScript.BulletType GetRandomBulletType()
+    BulletType GetRandomBulletType()
     {
-        Array values = Enum.GetValues(typeof(BulletPoolingScript.BulletType));
+        Array values = Enum.GetValues(typeof(BulletType));
 
         int randomIndex = UnityEngine.Random.Range(0, values.Length);
 
-        return (BulletPoolingScript.BulletType)values.GetValue(randomIndex);
+        return (BulletType)values.GetValue(randomIndex);
     }
 
     void ReloadCylinder()
@@ -85,5 +79,29 @@ public class GunShootingScript : MonoBehaviour
             bulletsInCylinder.Add(randomBullet);
             randomBullet.isInCylinder = true;
         }
+    }
+
+    void ShootBullet()
+    {
+        BulletHandler shotBullet = bulletsInCylinder[chamberCount];
+
+        shotBullet.gameObject.transform.position = firePoint.transform.position;
+        shotBullet.isInCylinder = false;
+        shotBullet.gameObject.SetActive(true);
+
+        float speed = shotBullet switch
+        {
+            NormalBulletScript => gunStateScript.normalBulletData.speed,
+            BouncyBulletScript => gunStateScript.bouncyBulletData.speed,
+            PoisonBulletScript => gunStateScript.poisonBulletData.speed,
+            ExplodingBulletScript => gunStateScript.explodingBulletData.speed,
+            HealingBulletScript => gunStateScript.healingBulletData.speed,
+            _ => 10f
+        };
+
+        shotBullet.MoveBullet(speed, gunStateScript.gunRotationScript.targetDirection);
+
+        bulletsInCylinder.RemoveAt(chamberCount);
+        chamberCount -= 1;
     }
 }

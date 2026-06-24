@@ -1,5 +1,15 @@
 using UnityEngine;
 
+//Globalize the bullet type
+    public enum BulletType
+    {
+        Normal,
+        Bouncy,
+        Poison,
+        Exploding,
+        Healing,
+    } 
+
 public class GunStateScript : MonoBehaviour
 {
     [Header ("Script Access")]
@@ -8,6 +18,13 @@ public class GunStateScript : MonoBehaviour
     public GunAnimationScript gunAnimationScript;
     public BulletPoolingScript bulletPoolingScript;
     public GunRotationScript gunRotationScript;
+
+    [Header("Bullet Data")]
+    public BulletValues normalBulletData;
+    public BulletValues bouncyBulletData;
+    public BulletValues poisonBulletData;
+    public BulletValues explodingBulletData;
+    public BulletValues healingBulletData;
 
     [Header ("Object Access")]
     public GameObject gunRotationPoint;

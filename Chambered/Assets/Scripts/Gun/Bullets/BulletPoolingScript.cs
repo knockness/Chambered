@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class BulletPoolingScript : MonoBehaviour
 { 
+    [Header("Bullet Type Enum Instance")]
     public BulletType bulletType;
-    public enum BulletType
-    {
-        Normal,
-        Bouncy,
-        Poison,
-        Exploding,
-        Healing,
-    } 
 
     [Header("Bullet Prefabs")]
     public BulletHandler normalBullet;
