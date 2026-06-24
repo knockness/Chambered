@@ -6,6 +6,11 @@ public class GunStateScript : MonoBehaviour
     public GunPickupScript gunPickupScript;
     public GunShootingScript gunShootingScript;
     public GunAnimationScript gunAnimationScript;
+    public BulletPoolingScript bulletPoolingScript;
+    public GunRotationScript gunRotationScript;
+
+    [Header ("Object Access")]
+    public GameObject gunRotationPoint;
 
     [Header ("Switch State Permission Booleans")]
     public bool debugIsBusy; //This is just here because isBusy will not show in the inspector due to the getter.
@@ -21,6 +26,10 @@ public class GunStateScript : MonoBehaviour
         gunPickupScript = GetComponent<GunPickupScript>();
         gunShootingScript = GetComponent<GunShootingScript>();
         gunAnimationScript = GetComponentInChildren<GunAnimationScript>();
+        bulletPoolingScript = GetComponent<BulletPoolingScript>();
+
+        gunRotationPoint = GameObject.Find("Gun Rotation Point");
+        gunRotationScript = gunRotationPoint.GetComponent<GunRotationScript>();
     }
 
     void Update()

@@ -5,12 +5,16 @@ public class BulletHandler : MonoBehaviour
     [Header ("Physics Components")]
     public Rigidbody2D bulletRigidbody;
 
+    [Header ("In Cylinder Check")]
+    public bool isInCylinder;
+
     void Awake()
     {
         bulletRigidbody = GetComponent<Rigidbody2D>();
+        isInCylinder = false;
     }
 
-    protected void MoveBullet(float speed, Vector2 direction)
+    public void MoveBullet(float speed, Vector2 direction)
     {
         bulletRigidbody.linearVelocity = speed * direction.normalized;
     }

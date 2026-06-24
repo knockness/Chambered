@@ -1116,15 +1116,7 @@ MonoBehaviour:
     m_Id: 79daeb59-bea2-4c78-be6d-285e6e85ee2f
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 149d60e1-d508-4dc6-8b8d-60f081e20ad3
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Shoot Controls
-      m_Flags: 0
+    m_SingletonActionBindings: []
     m_Flags: 0
   reloadControls:
     m_Name: Reload Controls
@@ -1174,8 +1166,6 @@ MonoBehaviour:
   gunShootingScript: {fileID: 0}
   gunAnimationScript: {fileID: 0}
   bulletPoolingScript: {fileID: 0}
-  gunRotationScript: {fileID: 0}
-  gunRotationPoint: {fileID: 0}
   debugIsBusy: 0
   state: 0
 --- !u!114 &1033305132
@@ -1825,10 +1815,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.24440894
-    y: 0.24431819
-    width: 0.51118207
-    height: 0.5113636
+    x: -0.2
+    y: -0.12083334
+    width: 0.5
+    height: 0.37500003
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40

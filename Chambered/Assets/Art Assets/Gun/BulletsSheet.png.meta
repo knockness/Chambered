@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,9 +104,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 1
-        height: 1
+        y: 5
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,10 +125,10 @@ TextureImporter:
       name: BulletsSheet_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 1
-        height: 1
+        x: 5
+        y: 5
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea60326ed6a1149459d21b88e846a41d
-      internalID: 2125033452
+      spriteID: 63d06004a0aae4353bf32c26f39ebda8
+      internalID: -299383532
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       name: BulletsSheet_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 1
-        height: 1
+        x: 10
+        y: 5
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db5b72e92707b42e39dd2c41cc388e0f
-      internalID: 1795405184
+      spriteID: 8a58f9348b38f42ef837852d53aaa53a
+      internalID: -574451642
       vertices: []
       indices: 
       edges: []
@@ -171,8 +171,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1
-        height: 1
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd30ebaea9c4a4d88b87be8024d2c043
-      internalID: -1386776089
+      spriteID: 88ee08623d82244859959660b17a7ca6
+      internalID: -14130183
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
       name: BulletsSheet_4
       rect:
         serializedVersion: 2
-        x: 1
+        x: 5
         y: 0
-        width: 1
-        height: 1
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98e2a70dfbc1547978b126d9c7096a94
-      internalID: -1162428931
+      spriteID: 0273d5bed0be84515be62377ed37621a
+      internalID: -1803749358
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7d01c8d1735434c598b370f421242b1c
+    spriteID: 71c0eb359c77e4a3391ba08f69f19b85
     internalID: 0
     vertices: []
     indices: 
@@ -223,13 +223,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":1.0,"y":1.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":5.0,"y":5.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       BulletsSheet_0: -7242256341037779165
-      BulletsSheet_1: 2125033452
-      BulletsSheet_2: 1795405184
-      BulletsSheet_3: -1386776089
-      BulletsSheet_4: -1162428931
+      BulletsSheet_1: -299383532
+      BulletsSheet_2: -574451642
+      BulletsSheet_3: -14130183
+      BulletsSheet_4: -1803749358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

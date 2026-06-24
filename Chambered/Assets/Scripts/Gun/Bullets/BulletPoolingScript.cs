@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletPoolingScript : MonoBehaviour
 { 
+    public BulletType bulletType;
     public enum BulletType
     {
         Normal,
@@ -14,11 +15,11 @@ public class BulletPoolingScript : MonoBehaviour
     } 
 
     [Header("Bullet Prefabs")]
-    private BulletHandler normalBullet;
-    private BulletHandler bouncyBullet;
-    private BulletHandler poisonBullet;
-    private BulletHandler explodingBullet;
-    private BulletHandler healingBullet;
+    public BulletHandler normalBullet;
+    public BulletHandler bouncyBullet;
+    public BulletHandler poisonBullet;
+    public BulletHandler explodingBullet;
+    public BulletHandler healingBullet;
 
     [Header("Pool Settings")]
     public int bulletsPerPool;
@@ -29,9 +30,14 @@ public class BulletPoolingScript : MonoBehaviour
     private List<BulletHandler> poisonPool = new List<BulletHandler>();
     private List<BulletHandler> explodingPool = new List<BulletHandler>();
     private List<BulletHandler> healingPool = new List<BulletHandler>();
+    
+    [Header ("Script Access")]
+    public GunStateScript gunStateScript;
 
     void Awake()
     {
+        gunStateScript = GetComponent<GunStateScript>();
+        
         MakeBulletList(normalBullet, normalPool);
         MakeBulletList(bouncyBullet, bouncyPool);
         MakeBulletList(poisonBullet, poisonPool);
@@ -66,17 +72,12 @@ public class BulletPoolingScript : MonoBehaviour
 
         for(int i = 0; i < bulletsPerPool; i++)
         {
-            if(!poolList[i].gameObject.activeSelf)
+            if(!poolList[i].gameObject.activeSelf && !poolList[i].isInCylinder)
             {
                 return poolList[i];
             }
         }
 
         return null;
-    }
-
-    void Update()
-    {
-
     }
 }
