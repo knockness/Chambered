@@ -4,5 +4,7 @@ using UnityEngine;
 public class BulletValues : ScriptableObject
 {
     public float speed;
-    public float damage;
+    public float otherDamage;
+    public float playerDamage;
+    public float lifetime;
 }

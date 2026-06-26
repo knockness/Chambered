@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: e40bb0cff39bd4ed488e936828de4438
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bulletRigidbody: {instanceID: 0}
+  - normalBulletData: {fileID: 11400000, guid: 6e7b1db04954b4d87a106966abba1ff3, type: 2}
+  - bouncyBulletData: {fileID: 11400000, guid: 2189dc1009ba24eb0bc40a59c26068ba, type: 2}
+  - poisonBulletData: {fileID: 11400000, guid: c453a4ec4edbd4fb49d7280fe04b6777, type: 2}
+  - explodingBulletData: {fileID: 11400000, guid: 42a86b047e9034a5bb5f3fc05d4ab180, type: 2}
+  - healingBulletData: {fileID: 11400000, guid: dfdcc967cfdaa4c1cbe3846beaec69e0, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

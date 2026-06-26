@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: BouncyBulletValues
   m_EditorClassIdentifier: Assembly-CSharp::BulletValues
   speed: 10
-  damage: 20
+  otherDamage: 35
+  playerDamage: 0
+  lifetime: 10

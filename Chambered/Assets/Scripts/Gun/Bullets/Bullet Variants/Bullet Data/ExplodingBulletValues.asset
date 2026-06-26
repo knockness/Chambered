@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f29848b1f1b4eb4b43c5e0c8506182, type: 3}
   m_Name: ExplodingBulletValues
   m_EditorClassIdentifier: Assembly-CSharp::BulletValues
-  speed: 5
-  damage: 50
+  speed: 4.5
+  otherDamage: 50
+  playerDamage: 3
+  lifetime: 5

@@ -2,20 +2,27 @@ using UnityEngine;
 
 public class NormalBulletScript : BulletHandler
 {
-    void Start()
-    {
-        bulletType = BulletType.Normal;
-    }
+    [Header("Bullet Data")]
+    public BulletValues normalBulletData;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         HealthScript otherHealth;
 
-            otherHealth = other.GetComponent<HealthScript>();
+        otherHealth = other.GetComponent<HealthScript>();
 
-            if (otherHealth.isDamaged)
-                //otherHealth.health -= baseDamage;
-                
-            return;
+        if (otherHealth != null && otherHealth.isDamaged)
+            if (other.CompareTag("Player"))
+            {
+                otherHealth.health -= normalBulletData.playerDamage;
+            }
+            else
+            {
+                otherHealth.health -= normalBulletData.otherDamage;
+            }
+        
+        StopAllCoroutines();
+        DeactivateBullet();
+        return;
     }
 }

@@ -119,7 +119,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &-5384397602955138793
 BoxCollider2D:
@@ -137,7 +137,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -179,5 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5438ceaeb29b14abdbfc757880285a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PoisonBulletScript
+  bulletType: 0
   bulletRigidbody: {fileID: 0}
   isInCylinder: 0
+  poisonBulletData: {fileID: 11400000, guid: c453a4ec4edbd4fb49d7280fe04b6777, type: 2}

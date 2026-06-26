@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PoisonBulletValues
   m_EditorClassIdentifier: Assembly-CSharp::BulletValues
   speed: 15
-  damage: 10
+  otherDamage: 20
+  playerDamage: 1
+  lifetime: 0.75

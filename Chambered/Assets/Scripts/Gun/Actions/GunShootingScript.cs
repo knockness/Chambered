@@ -2,8 +2,6 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using System.Collections.Generic;
 using System;
-using NUnit.Framework;
-using Unity.VisualScripting;
 
 public class GunShootingScript : MonoBehaviour
 {
@@ -20,8 +18,10 @@ public class GunShootingScript : MonoBehaviour
     public InputAction shootControls;
     public InputAction reloadControls;
 
-    [Header("Bullet Type Enum Instance")]
+    [Header("Bullet Types")]
     public BulletType bulletType;
+    public BulletType[] bulletTypeArrayValues;
+
 
     void OnEnable()
     {
@@ -37,6 +37,7 @@ public class GunShootingScript : MonoBehaviour
 
     void Awake()
     {
+        bulletTypeArrayValues = (BulletType[])Enum.GetValues(typeof(BulletType));
         gunStateScript = GetComponent<GunStateScript>();
         
         firePoint = GameObject.Find("Fire Point");
@@ -62,11 +63,8 @@ public class GunShootingScript : MonoBehaviour
 
     BulletType GetRandomBulletType()
     {
-        Array values = Enum.GetValues(typeof(BulletType));
-
-        int randomIndex = UnityEngine.Random.Range(0, values.Length);
-
-        return (BulletType)values.GetValue(randomIndex);
+        int randomIndex = UnityEngine.Random.Range(0, bulletTypeArrayValues.Length);
+        return (BulletType)bulletTypeArrayValues.GetValue(randomIndex);
     }
 
     void ReloadCylinder()
@@ -87,7 +85,6 @@ public class GunShootingScript : MonoBehaviour
 
         shotBullet.gameObject.transform.position = firePoint.transform.position;
         shotBullet.isInCylinder = false;
-        shotBullet.gameObject.SetActive(true);
 
         float speed = shotBullet switch
         {
@@ -99,7 +96,17 @@ public class GunShootingScript : MonoBehaviour
             _ => 10f
         };
 
-        shotBullet.MoveBullet(speed, gunStateScript.gunRotationScript.targetDirection);
+        float lifetime = shotBullet switch
+        {
+            NormalBulletScript => gunStateScript.normalBulletData.lifetime,
+            BouncyBulletScript => gunStateScript.bouncyBulletData.lifetime,
+            PoisonBulletScript => gunStateScript.poisonBulletData.lifetime,
+            ExplodingBulletScript => gunStateScript.explodingBulletData.lifetime,
+            HealingBulletScript => gunStateScript.healingBulletData.lifetime,
+            _ => 10
+        };
+
+        shotBullet.ActivateBullet(speed, gunStateScript.gunRotationScript.targetDirection, lifetime);
 
         bulletsInCylinder.RemoveAt(chamberCount);
         chamberCount -= 1;
